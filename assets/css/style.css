@@ -1,0 +1,501 @@
+html,body{
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #fff;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #fff;
+}
+*{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff;
+	letter-spacing: 1px;
+}
+body {
+    background-color: #181818;
+    font-size: 14px;
+    min-width: 720px;
+}
+#nowPlayingBarContainer{
+	width: 100%;
+	color: #fff;
+    background: -webkit-linear-gradient(left, white, white 30%, white 30%, white);
+	background-color: #282828;
+	bottom: 0;
+	position: fixed;
+	min-width: 620px;
+}
+#nowPlayingBar{
+	display: flex;
+	height: 90;
+	padding: 16px;
+	box-sizing: border-box;
+}
+#nowPlayingLeft,
+#nowPlayingRight{
+	width: 30%;
+	min-width: 180px;
+}
+#nowPlayingRight{
+	width: 30%;
+	margin-top: 16px;
+}
+#nowPlayingCenter{
+	width: 40%;
+	max-width: 700px;
+	display: flex;
+	flex-direction: column;
+}
+#nowPlayingBar .content{
+	width: 100%;
+	height: 57px;
+}
+.playerControls .buttons{
+	margin: 0 auto;
+	display: table;
+}
+.controlButton{
+	background-color: transparent;
+	border:none;
+	vertical-align: middle;
+}
+.controlButton img{
+	width: 20px;
+	height: 20px;
+}
+.controlButton.play img,
+.controlButton.pause img{
+	width: 32px;
+	height: 32px;
+}
+.controlButton:hover{
+	cursor: pointer;
+}
+.progressTime{
+	color: #a0a0a0;
+	font-size: 11px;
+	min-width: 40px;
+	text-align: center;
+}
+.playbackbar{
+	display: flex;
+}
+.progressBar{
+	width: 100%;
+	height: 12px;
+	display: inline-flex;
+	cursor: pointer;
+}
+.progressBarBg{
+	background-color: #404040;
+	height: 4px;
+	width: 100%;
+	border-radius: 2px;
+}
+.progress{
+	background-color: #a0a0a0;
+	height: 4px;
+	width: 0%;
+	border-radius: 2px;
+}
+.playbackBar .progressBar{
+	margin-top: 3px;
+}
+#nowPlayingLeft .albumArtwork {
+	height: 100%;
+    max-width: 57px;
+    margin-right: 15px;
+    float: left;
+    background-size: cover;
+}
+#nowPlayingLeft .trackInfo {
+	display: table;
+}
+#nowPlayingLeft .trackInfo .trackName {
+	margin: 6px 0;
+    display: inline-block;
+    width: 100%;
+}
+#nowPlayingLeft .trackName span{
+	color: black;
+}
+#nowPlayingLeft .trackInfo .artistName span {
+	font-size: 12px;
+    color: black;
+}
+.volumeBar{
+	width: 180px;
+	position: absolute;
+	right: 0;
+}
+.volumeBar .progressBar{
+	width: 125px;
+}
+#topContainer{
+	min-height: 100%;
+	width: 100%;
+}
+#navBarContainer{
+	color: #fff;
+    background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+	width: 220px;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.navBar{
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	-ms-flex-direction:column;
+}
+.logo{
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+.logo img{
+	width: 40px;
+	float: left;
+	padding: 0;
+	margin:0;
+}
+.logoText{
+	color: #fff;
+    size: 40px;
+    float: right;
+	margin: 5PX;
+}
+.navBar .group{
+	border-top: 1px solid #a0a0a0;
+	padding: 10px 0;
+}
+.navItem{
+	padding:10px 0;
+	font-size:14px;
+	display: block;
+	letter-spacing: 1px;
+	position: relative;
+}
+.navItemLink{
+	color:white;
+	text-decoration: none;
+}
+.navItemLink:hover{
+	color: purple;
+	cursor: pointer;
+}
+.navItemLink .icon{
+	position: absolute;
+	right: 0;
+	top: 6px;
+	width: 25px;
+}
+#mainViewContainer{
+	margin-left: 220px;
+	padding-bottom: 90px;
+	width: calc(100% - 220px);
+}
+#mainContent{
+	padding: 0 20px;
+}
+.pageHeadingBig{
+	padding: 20px;
+	text-align: center;
+}
+.gridViewItem {
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 29%;
+    max-width: 200px;
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+.gridViewItem img {
+    width: 100%;
+}
+.gridViewInfo {
+    font-weight: 300;
+    text-align: center;
+    padding: 5px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.gridViewItem a {
+    text-decoration: none;
+}
+#mainViewContainer{ 
+	background-color:#181818; 
+}
+.entityInfo {
+    padding: 40px 0 10px 0;
+    display: inline-block;
+    width: 100%;
+}
+.entityInfo .leftSection {
+    width: 30%;
+    float: left;
+    max-width: 250px;
+}
+.entityInfo .leftSection img {
+    width: 100%;
+}
+.entityInfo .rightSection {
+    width: 70%;
+    float: left;
+    padding: 5px 10px 5px 40px;
+    box-sizing: border-box;
+}
+.entityInfo .rightSection h2 {
+    margin-top: 0px;
+}
+.entityInfo .rightSection p {
+    color: #939393;
+    font-weight: 200;
+}
+.tracklist {
+    padding: 0;
+}
+
+.tracklistRow {
+    height: 40px;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+.tracklistRow span {
+    color: #939393;
+    font-weight: 200;
+}
+
+.tracklistRow:hover {
+	background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+}
+.tracklistRow .trackCount {
+    width: 8%;
+    float: left;
+}
+.tracklistRow .trackCount img {
+    width: 20px;
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+}
+.tracklistRow:hover .trackCount img {
+    visibility: visible;
+}
+.tracklistRow .trackCount span {
+    visibility: visible;
+}
+.tracklistRow:hover .trackCount span {
+    visibility: hidden;
+}
+.tracklistRow .trackInfo {
+    width: 75%;
+    float: left;
+}
+.tracklistRow .trackInfo span {
+    display: block;
+}
+.tracklistRow .trackOptions {
+    width: 5%;
+    float: left;
+    text-align: right;
+}
+.tracklistRow .trackOptions img {
+    width: 15px;
+    visibility: hidden;
+}
+.tracklistRow:hover .trackOptions img {
+    visibility: visible;
+}
+.tracklistRow .trackDuration {
+    width: 12%;
+    float: left;
+    text-align: right;
+}
+.tracklistRow .trackInfo .trackName {
+    color: #fff;
+    margin-bottom: 7px;
+}
+.artistInfo{
+	text-align: center;
+}
+.button{
+	margin-bottom: 10px;
+	color: white;
+	cursor: pointer;
+	font-weight: 500;
+	letter-spacing: 2px;
+	border: 2px solid white;
+	border-radius: 500px;
+	padding:15px;
+	min-width: 130px;
+}    
+.button.morado{
+	background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    border-color: #a60af3;
+}
+.borderBottom{
+	border-bottom: 1px solid #fff;
+	margin-bottom: 20px;
+}
+.trackListContainer h2,
+.wrapper h2,
+.artistContainer h2{
+	text-align: center;
+}
+[role="link"]{
+	cursor: pointer;
+}
+.searchContainer{
+	background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    padding: 20px 20px;
+}
+.searchContainer h4{
+	margin: 0;
+	font-weight: 300;
+}
+.searchContainer .searchInput{
+	width: 100%;
+	border: none;
+	background-color: transparent;
+	color: white;
+	font-weight: 700px;
+	font-size: 62px;
+	letter-spacing: 2px;
+}
+input:focus{
+	outline: none;
+}
+.searchResultRow{
+	padding: 15px 10px;
+}
+.searchResultRow:hover{
+	background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+}
+.searchResultRow .artistName{
+	font-color: white;
+	text-align: center;
+}
+.noResults{
+	margin: 15px;
+	display: block;
+}
+.buttonItems .button{
+    display: block;
+    margin: 0 auto 20px auto;
+}
+.playlistsContainer{
+    padding: 10px 0;
+}
+.playlistsContainer .gridViewContainer h2{
+	text-align: center;
+}
+.playlistImage{
+	border:3px solid #7a00cc;
+	padding: 10px;
+}
+.optionMenu{
+	position: fixed;
+	background-color: white;
+    width: 200px;
+    border:rgba(0,0,0,0.15);
+    border-radius: 3px;
+    z-index: 1000;
+    display: none;
+    -webkit-appearance: none;
+}
+.optionMenu .item{
+	width: 200px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	font-weight: 400px;
+	color: #282828;
+	cursor: pointer;
+	height: 40px;
+	-webkit-appearance: none;
+	font-size: 14px;
+	background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    color: white;
+}
+.optionMenu .item:hover{
+	background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    -webkit-appearance: none;
+}
+.optionMenu .item option{
+	border:none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: #a60af3;
+    color: white;
+}
+.userInfo h1{
+	text-align: center;
+}
+.userDetails{
+	padding: 20px;
+}
+.userDetails .container h2{
+	text-align: center;
+}
+.userDetails .container input[type="text"],
+.userDetails .container input[type="password"],
+.userDetails .container .button{
+	display: block;
+	margin: 16px auto;
+}
+.userDetails .container input[type="text"],
+.userDetails .container input[type="password"]{
+	height: 50px;
+	width: 100%;
+    background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+	border: none;
+	font-size: 18px;
+	font-weight: 300px;
+	padding: 0 20px;
+}
+.userDetails .container .message{
+	color: white;
+	font-weight: 300;
+}
